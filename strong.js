@@ -9,6 +9,7 @@ function deleteMeasurements() {
     for(var ii=selected.length-1; ii>=0; ii--) {
         opts.removeChild(selected[ii]);
     }
+    refreshMap();
 }
 
 function newMeasurementButton() {
@@ -56,6 +57,7 @@ function refreshMap() {
                             (maxy-miny)/canvas.height);
     ctx.scale(scale, scale);
     ctx.lineWidth = 1./scale;
+    ctx.font = '' + 20./scale + 'px serif';
     ctx.translate(-minx, -miny);
     // Linear least squares problem comes down to a matrix equation
     // (A B)(x) = (E)
@@ -105,6 +107,9 @@ function refreshMap() {
         ctx.moveTo(solx,-crossSize+soly);
         ctx.lineTo(solx,+crossSize+soly);
         ctx.stroke();
+        var offset = 20 / scale;
+        ctx.fillText(Math.round(solx)+','+Math.round(soly), 
+                     solx + offset, soly + offset);
     }
     ctx.restore();
 }
