@@ -54,7 +54,9 @@ function refreshMap() {
     ctx.save();
     var scale = 1./Math.max((maxx-minx)/canvas.width,
                             (maxy-miny)/canvas.height);
-    ctx.translate(-minx*scale, -miny*scale);
+    ctx.scale(scale, scale);
+    ctx.lineWidth = 1./scale;
+    ctx.translate(-minx, -miny);
     // Linear least squares problem comes down to a matrix equation
     // (A B)(x) = (E)
     // (B D)(y)   (F)
@@ -67,17 +69,17 @@ function refreshMap() {
         dirx /= norm;
         diry /= norm;
         ctx.beginPath()
-        ctx.moveTo(scale*curr.x1,scale*curr.y1);
-        ctx.lineTo(scale*curr.x2,scale*curr.y2);
+        ctx.moveTo(curr.x1,curr.y1);
+        ctx.lineTo(curr.x2,curr.y2);
         ctx.stroke();
-        var arrowLength = 10, arrowWidth = 5;
+        var arrowLength = 10/scale, arrowWidth = 5/scale;
         ctx.beginPath();
-        ctx.moveTo(scale*curr.x2,scale*curr.y2);
-        ctx.lineTo(scale*curr.x2-arrowLength*dirx-arrowWidth*diry,
-                   scale*curr.y2-arrowLength*diry+arrowWidth*dirx);
-        ctx.lineTo(scale*curr.x2-arrowLength*dirx+arrowWidth*diry,
-                   scale*curr.y2-arrowLength*diry-arrowWidth*dirx);
-        ctx.lineTo(scale*curr.x2,scale*curr.y2);
+        ctx.moveTo(curr.x2,curr.y2);
+        ctx.lineTo(curr.x2-arrowLength*dirx-arrowWidth*diry,
+                   curr.y2-arrowLength*diry+arrowWidth*dirx);
+        ctx.lineTo(curr.x2-arrowLength*dirx+arrowWidth*diry,
+                   curr.y2-arrowLength*diry-arrowWidth*dirx);
+        ctx.lineTo(curr.x2,curr.y2);
         ctx.fill();
         // Build up normal equation matrix
         A += diry*diry;
@@ -96,12 +98,12 @@ function refreshMap() {
         var solx = (E*D-B*F)/determinant;
         var soly = (A*F-B*E)/determinant;
         console.log('Solution at ('+solx+','+soly+')');
-        var crossSize = 5;
+        var crossSize = 5 / scale;
         ctx.beginPath();
-        ctx.moveTo(solx*scale-crossSize,soly*scale);
-        ctx.lineTo(solx*scale+crossSize,soly*scale);
-        ctx.moveTo(solx*scale,-crossSize+soly*scale);
-        ctx.lineTo(solx*scale,+crossSize+soly*scale);
+        ctx.moveTo(solx-crossSize,soly);
+        ctx.lineTo(solx+crossSize,soly);
+        ctx.moveTo(solx,-crossSize+soly);
+        ctx.lineTo(solx,+crossSize+soly);
         ctx.stroke();
     }
     ctx.restore();
