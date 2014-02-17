@@ -1,12 +1,12 @@
 body {
-    background-color: #eef;
+    background-color: #eee;
 }
 #controls {
     width: 320px;
     height: 460px;
     padding: 10px;
     border: thin solid black;
-    background: #ffd;
+    background: #ffe;
     display: inline-block;
     vertical-align: top;
 }
@@ -14,7 +14,7 @@ body {
 #map_frame {
     width: 640px;
     height: 480px;
-    background: #ddf;
+    background: #eef;
     margin-left: 10px;
     border: thin solid black;
     display: inline-block;
