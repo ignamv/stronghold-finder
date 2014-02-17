@@ -69,8 +69,11 @@ function refreshMap() {
     }
     // Solve least squares problem
     var determinant = A*D-B*B;
-    if(determinant < 1e-9) {
-        // TODO: add proper condition check
+    // Calculate matrix condition using that it's symmetric
+    var eig_avg = 0.5*(A+D);
+    var eig_diff = Math.sqrt((A-D)*(A-D)/4+B*B);
+    var matrix_condition = (eig_avg+eig_diff)/(eig_avg-eig_diff);
+    if(matrix_condition < 1e-3) {
         console.log('No solution');
         solx = NaN;
         soly = NaN;
@@ -85,7 +88,7 @@ function refreshMap() {
     }
     console.log('['+minx+','+maxx+']x['+miny+','+maxy+']');
     ctx.save();
-    var scale = 1./Math.max((maxx-minx)/canvas.width,
+    var scale = 0.8/Math.max((maxx-minx)/canvas.width,
                             (maxy-miny)/canvas.height);
     ctx.scale(scale, scale);
     ctx.lineWidth = 1./scale;
@@ -118,13 +121,14 @@ function refreshMap() {
         ctx.lineTo(solx,+crossSize+soly);
         ctx.stroke();
         var offset = 20 / scale;
-        ctx.fillText(Math.round(solx)+','+Math.round(soly), 
+        ctx.fillText('X='+Math.round(solx)+',Z='+Math.round(soly), 
                      solx + offset, soly + offset);
     }
     ctx.restore();
 }
 
 function data() {
+    // Add random measurements for testing
     nMeasurements = 8;
     //var centerX = Math.random()*500-250;
     //var centerY = Math.random()*500-250;
