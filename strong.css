@@ -1,0 +1,45 @@
+body {
+    background-color: #eef;
+}
+#controls {
+    width: 320px;
+    height: 460px;
+    padding: 10px;
+    border: thin solid black;
+    background: #ffd;
+    display: inline-block;
+    vertical-align: top;
+}
+
+#map_frame {
+    width: 640px;
+    height: 480px;
+    background: #ddf;
+    margin-left: 10px;
+    border: thin solid black;
+    display: inline-block;
+    vertical-align: top;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+}
+
+#measurement_list {
+    width: 100%;
+}
+
+#new_measurement {
+    text-align: right;
+}
+
+.caption {
+    border: thin solid black;
+    margin: 5px;
+    padding: 5px;
+    vertical-align: top;
+    display: inline-block;
+}
+
+

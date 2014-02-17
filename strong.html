@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+
+        <title>Stronghold finder</title>
+        <meta charset="UTF-8">
+
+        <link rel="stylesheet" href="strong.css" />
+        <script type="text/javascript" src="strong.js"></script>
+
+    </head>
+
+    <body onLoad="load();">
+    <h1>Minecraft Stronghold finder</h1>
+    <!--<button onClick="data();">Sample Data</button>-->
+        <div id="controls">
+            <div id="measurements">
+                <select id="measurement_list" multiple="True" size=15>
+                </select>
+                <button onClick="deleteMeasurements();">Delete selected measurements</button>
+            </div>
+            <hr />
+            <div id="new_measurement">
+                <label for="x1">Initial X</label><input id="x1" name="x1" /><br />
+                <label for="y1">Initial Z</label><input id="y1" name="y1" /><br />
+                <label for="x2">Final X</label><input id="x2" name="x2" /><br />
+                <label for="y2">Final Z</label><input id="y2" name="y2" /><br />
+                <button onClick="newMeasurementButton();">Add measurement</button>
+            </div>
+        </div>
+        <div id="map_frame">
+            <canvas id="map" width="640" height="480"></canvas>
+        </div>
+        <h2>Instructions</h2>
+        <p>Write your coordinates in <em>Initial X</em> and <em>Initial Z</em>. Throw the eye of
+        ender and place yourself right under it when it's hovering in the air.
+        Write your new coordinates in <em>Final X</em> and <em>Final Z</em> and
+        press <em>Add measurement</em>.</p>
+        <p>You'll get an estimate of the Stronghold's position as soon as you
+        have two measurements. In order to improve its accuracy, you should take your measurements far away from each other. After
+        taking the first measurement, move several hundred blocks to either
+        side. This prevents bearings which are close to parallel (bad
+        for estimation). Taking additional measurements also improves accuracy.</p>
+        <div class="caption" style="width: 290px;">
+            <img src="accuracy2.png" /><br />
+            <strong>Bad: </strong>Close starting points amplify measurement
+            errors, giving you a bad estimate.
+        </div>
+        <div class="caption">
+            <img src="accuracy1.png" /><br />
+            <strong>Good: </strong>Far away measurements give you an accurate
+            estimate.
+        </div>
+        <p>You can take more than two measurements in order to reduce the
+        estimation error.</p>
+    </body>
+
+</html>
