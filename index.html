@@ -12,22 +12,29 @@
     </head>
 
     <body onLoad="load();">
-    <h1>Minecraft Stronghold finder</h1>
-    <p>Find a stronghold without wasting Eyes of Ender! Instructions below.</p>
+    <div id="wrap">
+    <div id="title">
+        <h1>Minecraft Stronghold finder</h1>
+        <p>Find a stronghold without wasting Eyes of Ender!
+        Instructions below.</p>
+    </div>
     <!--<button onClick="data();">Sample Data</button>-->
         <div id="controls">
-            <div id="measurements">
-                <select id="measurement_list" multiple="True" size=15>
-                </select>
-                <button onClick="deleteMeasurements();">Delete selected measurements</button>
+            <div id="new_measurement">
+                <h3>Add measurement</h3>
+                <label for="x1">Initial X </label><input id="x1" name="x1" /><br />
+                <label for="y1">Initial Z </label><input id="y1" name="y1" /><br />
+                <label for="x2">Final X </label><input id="x2" name="x2" /><br />
+                <label for="y2">Final Z </label><input id="y2" name="y2" /><br />
+                <button onClick="newMeasurementButton();">Add measurement</button>
             </div>
             <hr />
-            <div id="new_measurement">
-                <label for="x1">Initial X</label><input id="x1" name="x1" /><br />
-                <label for="y1">Initial Z</label><input id="y1" name="y1" /><br />
-                <label for="x2">Final X</label><input id="x2" name="x2" /><br />
-                <label for="y2">Final Z</label><input id="y2" name="y2" /><br />
-                <button onClick="newMeasurementButton();">Add measurement</button>
+            <div id="measurements">
+                <div id="selectbox">
+                    <select id="measurement_list" multiple="True" size=15>
+                    </select>
+                </div>
+                <button onClick="deleteMeasurements();">Delete selected measurements</button>
             </div>
         </div>
         <div id="map_frame">
@@ -53,6 +60,7 @@
             <strong>Good: </strong>Far away measurements give you an accurate
             estimate.
         </div>
+    </div>
     </body>
 
 </html>

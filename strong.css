@@ -1,14 +1,20 @@
 body {
-    background-color: #eee;
+    background-color: #fafafa;
+    font-family: sans-serif;
+    padding-top: 5.5em;
 }
 #controls {
     width: 320px;
-    height: 460px;
-    padding: 10px;
-    border: thin solid black;
-    background: #ffe;
+    height: 440px;
+    padding: 20px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: #fff #eeb #eeb #fff;
+    border-width: 3px 5px 5px 3px;
+    background: #ffd;
     display: inline-block;
     vertical-align: top;
+    text-align: center;
 }
 
 #map_frame {
@@ -16,7 +22,10 @@ body {
     height: 480px;
     background: #eef;
     margin-left: 10px;
-    border: thin solid black;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: #fff #bbd #bbd #fff;
+    border-width: 1px 5px 5px 1px;
     display: inline-block;
     vertical-align: top;
 }
@@ -26,8 +35,16 @@ body {
     height: 100%;
 }
 
+#selectbox {
+    display: inline-block;
+    vertical-align: top;
+    overflow: hidden;
+    border: thin solid gray;
+}
+
 #measurement_list {
-    width: 100%;
+    width: 25em;
+    margin: -5px -20px -5px -5px;
 }
 
 #new_measurement {
@@ -41,5 +58,40 @@ body {
     vertical-align: top;
     display: inline-block;
 }
+#selectbox select {
 
+}
+
+input {
+    border-style: solid;
+    border-width: 0px 1px 1px 0px;
+    height: 1.1em;
+    vertical-align: bottom;
+}
+
+#title {
+    margin: 0px;
+    width: 100%;
+    height: 5em;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    background-color: #ddd;
+    border-bottom: 3px solid #ccc;
+    text-align: right;
+}
+
+#title p {
+    margin-top: -0.1em;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 0;
+}
+h3 {
+    text-align: center;
+    margin-bottom: 6px;
+}
 
