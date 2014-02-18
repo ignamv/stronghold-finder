@@ -9,12 +9,16 @@ body {
     padding: 20px;
     border-radius: 10px;
     border-style: solid;
-    border-color: #fff #eeb #eeb #fff;
-    border-width: 3px 5px 5px 3px;
-    background: #ffd;
+    border-color: #ffb;
+    border-width: 3px;
+    background: #fafa80;
     display: inline-block;
     vertical-align: top;
     text-align: center;
+}
+
+hr {
+    border: 2px solid #cc4;
 }
 
 #map_frame {
@@ -67,6 +71,14 @@ input {
     border-width: 0px 1px 1px 0px;
     height: 1.1em;
     vertical-align: bottom;
+}
+
+button {
+    border: thin solid black;
+    background-color: #222;
+    color: white;
+    margin: 2px;
+    padding: 1px;
 }
 
 #title {
