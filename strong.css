@@ -49,6 +49,10 @@ hr {
 #measurement_list {
     width: 25em;
     margin: -5px -20px -5px -5px;
+    padding: 7px;
+    font-size: 1.2em;
+    height: 9em;
+    width: 340px;
 }
 
 #new_measurement {
@@ -61,9 +65,6 @@ hr {
     padding: 5px;
     vertical-align: top;
     display: inline-block;
-}
-#selectbox select {
-
 }
 
 input {
