@@ -111,3 +111,7 @@ h3 {
 #results {
     text-align: left;
 }
+.titlebox {
+    float: right;
+    margin: 2px;
+}
