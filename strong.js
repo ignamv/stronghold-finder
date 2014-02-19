@@ -1,6 +1,9 @@
+var moreMeasurements = "Add two or more measurements to find a Stronghold";
+
 function load() {
     canvas = document.getElementById("map");
     ctx = canvas.getContext("2d");
+    document.getElementById('results').innerHTML = moreMeasurements;
 }
 
 function deleteMeasurements() {
@@ -40,6 +43,7 @@ function refreshMap() {
     console.log(canvas.height);
     ctx.clearRect(0,0,canvas.width, canvas.height)
     if(measurements.length < 2) {
+        document.getElementById('results').innerHTML = moreMeasurements;
         return;
     }
     // Linear least squares problem comes down to a matrix equation
@@ -120,9 +124,11 @@ function refreshMap() {
         ctx.moveTo(solx,-crossSize+soly);
         ctx.lineTo(solx,+crossSize+soly);
         ctx.stroke();
-        var offset = 20 / scale;
-        ctx.fillText('X='+Math.round(solx)+',Z='+Math.round(soly), 
-                     solx + offset, soly + offset);
+        document.getElementById('results').innerHTML = 
+            'Look for a stronghold near <b>X='+Math.round(solx)+
+            ', Z='+Math.round(soly)+'</b>';
+    } else {
+        document.getElementById('results').innerHTML = 'Unable to estimate Stronghold position. Try spacing your measurements farther apart.';
     }
     ctx.restore();
 }
