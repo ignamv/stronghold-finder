@@ -17,8 +17,8 @@
    inkscape:version="0.48.4 r9939"
    sodipodi:docname="accuracy1.svg"
    inkscape:export-filename="/home/ignamv/programacion/minecraft/accuracy1.png"
-   inkscape:export-xdpi="53"
-   inkscape:export-ydpi="53">
+   inkscape:export-xdpi="48.051369"
+   inkscape:export-ydpi="48.051369">
   <defs
      id="defs4">
     <marker
@@ -92,7 +92,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.4"
-     inkscape:cx="361.2088"
+     inkscape:cx="362.63737"
      inkscape:cy="301.17722"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -114,7 +114,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
