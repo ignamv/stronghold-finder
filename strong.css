@@ -65,6 +65,8 @@ hr {
     padding: 5px;
     vertical-align: top;
     display: inline-block;
+    background-color: #ddf;
+    border-radius: 10px;
 }
 
 input {
@@ -92,11 +94,12 @@ button {
     right: 0px;
     background-color: #ddd;
     border-bottom: 3px solid #ccc;
-    text-align: right;
+    text-align: left;
 }
 
 #title p {
     margin-top: -0.1em;
+    margin-left: 3em;
 }
 
 h1 {
